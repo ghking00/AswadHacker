@@ -1,133 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Aswad ✘ Cyber Hacker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Courier New', monospace;
-      background: url('https://i.postimg.cc/T2nKhqX1/IMG-20250804-WA0068.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #00ff00;
-      overflow: hidden;
-      height: 100vh;
-    }
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-    .terminal {
-      position: absolute;
-      top: 10%;
-      left: 5%;
-      right: 5%;
-      background: rgba(0, 0, 0, 0.85);
-      border: 3px solid red;
-      border-radius: 15px;
-      padding: 25px;
-      z-index: 2;
-      font-size: 16px;
-      box-shadow: 0 0 25px red;
-    }
-    .profile-pic {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      border: 2px solid red;
-      box-shadow: 0 0 10px red;
-      overflow: hidden;
-      z-index: 3;
-    }
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .cursor { animation: blink 0.6s infinite; }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-    pre { white-space: pre-wrap; word-break: break-word; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Owner Amna Rajpoot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.postimg.cc/ZK878rRW/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px;
+            color: #000;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .box {
+            border: 2px solid #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #e0ffe0;
+        }
+    </style>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-  <div class="profile-pic">
-    <img src="https://i.postimg.cc/T2nKhqX1/IMG-20250804-WA0068.jpg" alt="Aswad Profile">
-  </div>
-  <div class="terminal">
-    <p style="color: red; font-weight: bold;">⚠️ Thanx for opening the Aswad Cyber Link</p>
-    <p style="color: red;">💀 Your data is hacked by <strong>Aswad Rajpoot Cyber Hacker</strong><br>📱 (03332269513)</p>
-    <br>
-    <pre id="logArea"></pre><span class="cursor">|</span>
-  </div>
-  <audio id="typeSound" src="https://www.soundjay.com/typing/sounds/keyboard-5.mp3" preload="auto"></audio>
 
-  <script>
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops = Array(columns).fill(1);
-    const letters = "01";
+    <div class="container">
+        <div class="box">
+            <h2>Owner Amna Rajpoot</h2>
+            <p>Contact: 03141495075</p>
+            <p>Aisi website banwani ho to contact kren: 03141495075</p>
+        </div>
+    </div>
 
-    function drawMatrix() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.07)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#0f0";
-      ctx.font = fontSize + "px monospace";
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.94) drops[i] = 0;
-        drops[i]++;
-      }
-    }
-    setInterval(drawMatrix, 20);
-
-    const lines = [
-      "Accessing secure server...",
-      "Connected ✅",
-      "IP traced...",
-      "Injecting payload...",
-      "📂 Scanning device...",
-      "📸 Accessing Photos and Videos...",
-      "💬 Reading SMS Messages...",
-      "📞 Extracting Contact List...",
-      "System Breached ⚠️",
-      "💀 Device Hijacked Successfully...",
-      "😈 Now Aswad have Your Phone Access... Never mess with Aswad Rajpoot Cyber Hacker ⚠️"
-    ];
-
-    const log = document.getElementById("logArea");
-    const sound = document.getElementById("typeSound");
-    let line = 0, char = 0;
-
-    function typeLine() {
-      if (line >= lines.length) return;
-      const currentLine = lines[line];
-      if (char < currentLine.length) {
-        log.textContent += currentLine.charAt(char);
-        char++;
-        sound.currentTime = 0;
-        sound.play();
-        setTimeout(typeLine, 30);
-      } else {
-        log.textContent += "\n";
-        line++;
-        char = 0;
-        setTimeout(typeLine, 150);
-      }
-    }
-
-    setTimeout(typeLine, 500);
-  </script>
 </body>
 </html>
